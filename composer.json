@@ -1,0 +1,53 @@
+{
+	"name": "php_modules/application-server-error-handler",
+	"version": "1.0",
+	"description": "Error handler for Apsu",
+  "type": "library",
+	"license": "MIT",
+	"keywords": [
+		"samils",
+    "application",
+    "web",
+    "configurator",
+    "config",
+    "package-config",
+    "application-server-error-handler"
+	],
+	"autoload": {
+    "psr-4": {
+      "Sammy\\": "Sammy/",
+      "Samils\\": "Samils/"
+    },
+
+    "psr-0": {
+      "Sammy\\": "Sammy/",
+      "Samils\\": "Samils/"
+    },
+
+		"classmap": [],
+		"files": [
+      "src/handlers/error.php",
+      "src/handlers/exception.php",
+      "src/handlers/shutdown.php"
+    ]
+	},
+  "homepage": "https://github.com/samils/application-server-error-handler",
+  "readme": "./README.md",
+  "authors": [
+    {
+      "name": "Agostinho Lopes",
+      "email": "agostinhosaml832@gmail.com",
+      "homepage": "https://agostinhosamil.github.io",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "email": "base.samils@gmail.com",
+    "issues": "https://github.com/samils/application-server-error-handler/issues",
+    "wiki": "https://github.com/samils/application-server-error-handler/wiki"
+  },
+	"require": {
+		"php": ">=5.6.20",
+    "php_modules/file-content-getter": "dev-main"
+	}
+}
