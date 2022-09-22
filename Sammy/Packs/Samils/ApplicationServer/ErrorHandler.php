@@ -64,7 +64,7 @@ namespace Sammy\Packs\Samils\ApplicationServer {
   class ErrorHandler {
     use ErrorHandler\Base;
 
-    public static final function HanldeError () {
+    public static function HanldeError () {
       if (!(func_num_args () >= 1)) return;
 
       $___errorProperties = func_get_arg (0);

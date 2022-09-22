@@ -67,28 +67,28 @@ namespace Sammy\Packs\Samils\ApplicationServer\ErrorHandler {
      */
     private $props = array ();
 
-    public final function __construct ($message = null) {
+    public function __construct ($message = null) {
       $this->message = (string)( $message );
     }
 
-    public final function __set ($key, $val) {
+    public function __set ($key, $val) {
       # $this->$key = $val;
       $key = strtolower ($key);
       $this->props [ $key ] = $val;
     }
 
-    public final function __get ($key) {
+    public function __get ($key) {
       $key = strtolower ($key);
       if (isset ($this->props [ $key ])) {
         return $this->props [ $key ];
       }
     }
 
-    public final function __isset ($key) {
+    public function __isset ($key) {
       return isset ( $this->props [ strtolower ($key) ] );
     }
 
-    public final function handle ($args = null) {
+    public function handle ($args = null) {
       $args = !is_array ($args) ? [] : $args;
       return self::HanldeError (
         array_merge (['err' => $this], $args)
