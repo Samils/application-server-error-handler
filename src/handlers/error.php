@@ -9,7 +9,8 @@
  * - Autoload, application dependencies
  */
 namespace Samils\Handler\Error {
-  use ApplicationStorage;
+  use Sammy\Packs\FileContentGetter;
+  use Sammy\Packs\ApplicationStorage;
   use Samils\Handler\Error as SamilsError;
   use Sammy\Packs\Samils\ApplicationServer\ErrorHandler;
   /**
@@ -49,7 +50,7 @@ namespace Samils\Handler\Error {
     }
 
     $errorHandlerAguments = [];
-    $contentGetter = requires ('file-content-getter');
+    $contentGetter = new FileContentGetter;
 
     if ( $contentGetter ) {
       $errorHandlerAguments [ 'lines' ] = $contentGetter->getFileLines (

@@ -9,8 +9,9 @@
  * - Autoload, application dependencies
  */
 namespace Samils\Handler\ShutDown {
-  use ApplicationStorage;
+  use Sammy\Packs\FileContentGetter;
   use Samils\Handler\Error as SamilsError;
+  use Sammy\Packs\Samils\ApplicationStorage;
   /**
    * Make sure the command base internal function is not
    * declared in the php global scope defore creating
@@ -53,8 +54,8 @@ namespace Samils\Handler\ShutDown {
       $file = $error['file'];
       $line = $error['line'];
 
-      $contentGetter = requires ( 'file-content-getter' );
-      $lines = $contentGetter->getFileLines($file, [$line, 6]);
+      $contentGetter = requires ('file-content-getter');
+      $lines = $contentGetter->getFileLines ($file, [$line, 6]);
 
       $err->message = $error ['message'];
       $err->title = 'Sami::Error';

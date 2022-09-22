@@ -31,6 +31,7 @@
  * SOFTWARE.
  */
 namespace Sammy\Packs\Samils\ApplicationServer {
+  use Sammy\Packs\FileContentGetter;
   use Samils\Handler\HandleOutPut;
   use Samils\Handler\ConsoleError;
   use Sammy\Packs\TraceDatas;
@@ -113,7 +114,7 @@ namespace Sammy\Packs\Samils\ApplicationServer {
           $lines_high = [];
           $finalSourceList = [];
 
-          $contentGetter = requires ('file-content-getter');
+          $contentGetter = new FileContentGetter;
 
 
           foreach ($source as $sourceDatas) {
@@ -153,8 +154,8 @@ namespace Sammy\Packs\Samils\ApplicationServer {
 
       http_response_code ($responseStatus);
 
-      if (strtolower(php_sapi_name()) === 'cli') {
-        ConsoleError::Handle ( $err, $___errorProperties );
+      if (strtolower (php_sapi_name ()) === 'cli') {
+        ConsoleError::Handle ($err, $___errorProperties);
       } else {
 
         $publicPath = HandleOutPut::GetPublicPath ();
