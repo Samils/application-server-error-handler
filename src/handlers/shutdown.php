@@ -54,7 +54,7 @@ namespace Samils\Handler\ShutDown {
       $file = $error['file'];
       $line = $error['line'];
 
-      $contentGetter = requires ('file-content-getter');
+      $contentGetter = new FileContentGetter;
       $lines = $contentGetter->getFileLines ($file, [$line, 6]);
 
       $err->message = $error ['message'];
