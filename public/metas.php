@@ -1,6 +1,6 @@
 <?php
 
-$module->exports = array (
+return array (
   ['charset' => 'utf-8'],
   [
     'name' => 'viewport',

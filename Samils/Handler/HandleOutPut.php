@@ -179,7 +179,7 @@ namespace Samils\Handler {
       $metaTagsFile = join (DIRECTORY_SEPARATOR, [
         self::GetPublicPath (), 'metas.php'
       ]);
-      $metas = requires ($metaTagsFile);
+      $metas = require ($metaTagsFile);
       $meta_tags = array ();
 
       if (is_array ($metas) && $metas) {
