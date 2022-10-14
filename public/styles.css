@@ -10,8 +10,6 @@ body, html {
 
 body * {
   word-break: break-word !important;
-  user-select: none !important;
-  -webkit-user-select: none !important;
 }
 .ils-error, .header-base, .content-base {
   width: 100%;
